@@ -1,0 +1,53 @@
+/*TODO rozwijanie podmenu do boku w wiecej jako display: inline block*/
+
+.hamburgerMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburgerMenu-close-icon, .hamburgerMenu-open-icon  {
+    color: #F5A3E4;
+    filter: drop-shadow(5px 5px 5px gray);
+    /*height: 100px;*/
+}
+
+.hamburgerMenu button:hover {
+    color: #F5A3E4;
+}
+
+.information-dropDown, .contact-dropDown, .more-dropDown {
+    background-color: #0B85F1;
+    display: none;
+    position: absolute;
+    /*min-width: 260px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.information-dropDown p, .contact-dropDown p, .more-dropDown p {
+    padding: 5px;
+    /*text-align: center;*/
+}
+
+.information:hover .information-dropDown, .contact:hover .contact-dropDown, .more:hover .more-dropDown {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hamburgerMenu-dropDown-icon {
+    vertical-align: middle;
+}
+
+.hamburgerMenu button {
+    cursor: pointer;
+    /*text-shadow: 2px 2px 2px rgba(0,0,0,0.5);*/
+    background: transparent;
+    border: none !important;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
