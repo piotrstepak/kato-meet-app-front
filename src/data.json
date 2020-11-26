@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Vitalik",
+    "image": "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F41563522%2F960x0.jpg%3Ffit%3Dscale",
+    "age": 26,
+    "email": "vitalik@vitalik.com",
+    "password": "vitalik"
+  },
+  {
+    "id": 1,
+    "name": "Magda",
+    "image": "https://d-tm.ppstatic.pl/kadry/77/04/c8ef1e774d9b34d617b59a92fddd.1000.jpg",
+    "age": 50,
+    "email": "magda@magda.com",
+    "password": "magda"
+  },
+  {
+    "id": 2,
+    "name": "Grycanka",
+    "image": "https://ocdn.eu/pulscms-transforms/1/EE9ktkpTURBXy9jOTQ3MWJkY2RkNTA1NTYzZmUwOGE1MTU4MDk3YTg4YS5qcGeSlQMCFs0CmM0BdZMFzQGQzOE",
+    "age": 31,
+    "email": "grycanka@grycanka.com",
+    "password": "grycanka"
+  }
+]

@@ -1,0 +1,66 @@
+.personCard {
+    max-width: 450px;
+    /*max-height: 300px;*/
+    margin: auto;
+    padding: 15px;
+}
+
+.person .person-photo {
+    /*box-shadow: 0 2px 3px 0 rgba(0,0,0,0.3);*/
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.person .person-description {
+    text-align: left;
+    padding: 18px;
+    background-color: #f5a3e4;
+    /*background-image: linear-gradient(to bottom right, #cb53b6, #f5a3e4);*/
+    border-radius: 0 0 12px 12px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.person .person-name-age {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.person img {
+    width: 450px;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.person-actions {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.person-actions button {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+    padding: 10px;
+    border: 0;
+    border-radius: 50px;
+    outline: none;
+    background-color: #F5A3E4;
+    float: left;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.person-actions button:hover {
+    background-color: #E68DE3;
+    width: 55px;
+    height: 55px;
+}
+
+.person-actions button img {
+    width: 100%;
+}
