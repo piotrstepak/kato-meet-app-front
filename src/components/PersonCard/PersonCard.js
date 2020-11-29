@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './PersonCard.css';
 import Person from './Person';
+import WaitingRoomCard from "./WaitingRoomCard";
 import data from '../../data.json';
 
 function PersonCard() {
@@ -26,13 +27,15 @@ function PersonCard() {
 
     return (
         <div className='personCard'>
-            {people[0] ? (
+            {people[1] ? (
                 <Person
-                    key={people[0].id}
-                    person={people[0]}
+                    key={people[1].id}
+                    person={people[1]}
                     handleButtonAction={handleButtonAction}
                 />
-            ) : null}
+            ) : <WaitingRoomCard
+                    image={people[0].image}
+                />}
         </div>
     );
 }

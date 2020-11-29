@@ -27,7 +27,7 @@
 
 .person img {
     width: 450px;
-    height: 450px;
+    height: 430px;
     display: block;
     object-fit: cover;
     border-radius: 12px 12px 0 0;
@@ -63,4 +63,62 @@
 
 .person-actions button img {
     width: 100%;
+}
+
+.waitingRoom p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pulse {
+    margin: 30px auto auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /*background: #FFDEDF;*/
+    /*background: #f1b7e9;*/
+    box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    /*margin-bottom: 35px;*/
+    /*border: 3px solid #F5C9CA;*/
+    /*padding: 30px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: #F5C9CA;*/
+    background: radial-gradient(#e66465,  #6cb4f1);
+}
+
+.pulse img {
+    /*width: 70%;*/
+    /*border: 2px solid white;*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.pulse:hover {
+    animation: none;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 35px rgba(241, 201, 202, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
+        box-shadow: 0 0 0 0 rgba(241, 201, 202, 0.4);
+    }
+    100% {
+        -moz-box-shadow: 0 0 35px 35px rgba(241, 201, 202, 0);
+        box-shadow: 0 0 35px 35px rgba(241, 201, 202, 0);
+    }
 }
