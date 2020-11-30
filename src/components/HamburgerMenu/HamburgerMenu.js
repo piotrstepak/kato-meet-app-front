@@ -4,7 +4,7 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
 
-function HamburgerMenu() {
+function HamburgerMenu({ isLogged }) {
     const [open, setOpen] = useState(false);
 
     const closeButtonSection = (
@@ -118,6 +118,12 @@ function HamburgerMenu() {
         </div>
     )
 
+    const logoSection = (
+        <button>
+            LOGO
+        </button>
+    )
+
     const handleStartingMenuOpened = () => {
         return (
             <>
@@ -141,6 +147,7 @@ function HamburgerMenu() {
                 {myProfileSection}
                 {logoutSection}
                 {moreSection}
+                {logoSection}
             </>
         )
     }
@@ -160,8 +167,10 @@ function HamburgerMenu() {
 
     return (
         <div className='hamburgerMenu'>
-            {/*na podstawie pobranych propsow */}
-            {open ? handleStartingMenuOpened() : handleMenuClosed()}
+            {isLogged ?
+                (open ? handleLoggedMenuOpened() : handleMenuClosed()) :
+                (open ? handleStartingMenuOpened() : handleMenuClosed())}
+            {/*{open ? handleStartingMenuOpened() : handleMenuClosed()}*/}
             {/*{open ? handleLoggedMenuOpened() : handleMenuClosed()}*/}
         </div>
     );

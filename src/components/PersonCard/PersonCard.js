@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './PersonCard.css';
 import Person from './Person';
 import WaitingRoomCard from "./WaitingRoomCard";
-import data from '../../data.json';
+// import data from '../../data.json';
 
-function PersonCard() {
+function PersonCard({ data }) {
+    // jako props user i ogladajac karty pomijam swoje id
     const [people, setPeople] = useState(data);
     console.log(people)//pomocniczy
 
