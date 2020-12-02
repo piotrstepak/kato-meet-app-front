@@ -1,10 +1,12 @@
 import React from 'react';
 import actions from '../../../app/loginLogout/duck/actions';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-function LogoutButton({ logout }) {
+function LogoutButton() {
+    const dispatch = useDispatch();
+
     const handleLogout = () => {
-        logout()
+        dispatch(actions.logout());
     }
 
     return (
@@ -14,8 +16,4 @@ function LogoutButton({ logout }) {
     );
 }
 
-const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(actions.logout())
-})
-
-export default connect(null, mapDispatchToProps)(LogoutButton);
+export default LogoutButton;

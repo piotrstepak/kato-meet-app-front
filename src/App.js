@@ -4,11 +4,12 @@ import HamburgerMenu from "./components/HamburgerMenu/HamburgerMenu";
 import LoginCard from "./components/LoginCard/LoginCard";
 import PersonCard from "./components/PersonCard/PersonCard";
 import data from './data.json';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-//props w App??
-//pobieranie danych
-function App({ isLogged }) {
+//pobieranie danych-data
+function App() {
+    const isLogged = useSelector(state => state.loginLogout.isLogged)
+
     return (
         <div className='app'>
             <HamburgerMenu isLogged={isLogged}/>
@@ -17,8 +18,4 @@ function App({ isLogged }) {
     );
 }
 
-const mapStateToProps = state => ({
-    isLogged: state.loginLogout.isLogged
-})
-
-export default connect(mapStateToProps, {})(App)
+export default App;

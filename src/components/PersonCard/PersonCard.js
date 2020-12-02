@@ -26,6 +26,7 @@ function PersonCard({ data }) {
         }
     }
 
+    //ifa jesli id jak w storze to pominac
     return (
         <div className='personCard'>
             {people[1] ? (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LoginCard.css';
 import logo from '../../resources/katoMeetApp_Logo.png';
 import actions from '../../app/loginLogout/duck/actions';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 //powynosic do osobnych komponentow
 function LoginCard({ data, login }) {
@@ -10,6 +10,7 @@ function LoginCard({ data, login }) {
     const [isRegister, setIsRegister] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch()
 
     //localStorage dla danych logowania uzytkownika
     //po kliknieciu w login/register dolozyc stzralke do powrotu
@@ -27,8 +28,7 @@ function LoginCard({ data, login }) {
         }
 
         const correctCredentials = () => {
-            login(user)
-            // store.dispatch(loginLogoutActions.login(user));//zaimportowac store
+            dispatch(actions.login(user));
         }
 
         (user.length === 0) ? incorrectCredentials() : correctCredentials();
@@ -117,8 +117,4 @@ function LoginCard({ data, login }) {
     );
 }
 
-const mapDispatchToProps = dispatch => ({
-    login: user => dispatch(actions.login(user))
-})
-
-export default connect(null, mapDispatchToProps)(LoginCard);
+export default LoginCard;

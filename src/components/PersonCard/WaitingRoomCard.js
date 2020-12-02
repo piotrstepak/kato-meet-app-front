@@ -1,6 +1,7 @@
 import React from 'react';
 
 function WaitingRoomCard({ image }) {
+    //image ze storea
     return (
         <div className='waitingRoom'>
             <p>Niestety nie ma nikogo nowego w Twojej okolicy..</p>
