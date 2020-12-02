@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './LoginCard.css';
 import logo from '../../resources/katoMeetApp_Logo.png';
+import actions from '../../app/loginLogout/duck/actions';
+import { connect } from 'react-redux';
 
-function LoginCard({ data }) {
+//powynosic do osobnych komponentow
+function LoginCard({ data, login }) {
     const [isLogin, setIsLogin] = useState(false);
     const [isRegister, setIsRegister] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    //localStorage dla danych logowania uzytkownika
+    //po kliknieciu w login/register dolozyc stzralke do powrotu
 
     const handleLoginSubmit = (event) => {
         //na czas ladowania/szukania usera wyswietlic np ladowanie.. albo jakis spinner
@@ -16,14 +22,13 @@ function LoginCard({ data }) {
         ))
 
         const incorrectCredentials = () => {
-            alert('Niewłaściwy email lub hasło..');
             event.preventDefault();
+            alert('Niewłaściwy email lub hasło..');
         }
 
         const correctCredentials = () => {
-            //ustawic usera w app.js
-            alert('Correct! email: ' + email + ', pass: ' + password)
-            console.log(user)
+            login(user)
+            // store.dispatch(loginLogoutActions.login(user));//zaimportowac store
         }
 
         (user.length === 0) ? incorrectCredentials() : correctCredentials();
@@ -59,6 +64,7 @@ function LoginCard({ data }) {
         </>
     )
 
+    //za pomoca ref={emailInput} zebrac wartosci w momencie potwierdzenia
     const loginButtons = (
         <>
             <form onSubmit={handleLoginSubmit}>
@@ -111,4 +117,8 @@ function LoginCard({ data }) {
     );
 }
 
-export default LoginCard;
+const mapDispatchToProps = dispatch => ({
+    login: user => dispatch(actions.login(user))
+})
+
+export default connect(null, mapDispatchToProps)(LoginCard);

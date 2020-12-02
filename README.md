@@ -1,5 +1,11 @@
 kato-meet-app-front
 
+TO LOGIN:
+
+-email: vitalik@vitalik.com
+
+-password: vitalik
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

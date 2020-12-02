@@ -3,7 +3,9 @@ import './HamburgerMenu.css';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
+import LogoutButton from "./sections/LogoutButton";
 
+//powynosic buttony do folderu sections
 function HamburgerMenu({ isLogged }) {
     const [open, setOpen] = useState(false);
 
@@ -93,12 +95,6 @@ function HamburgerMenu({ isLogged }) {
         </button>
     )
 
-    const logoutSection = (
-        <button>
-            WYLOGUJ
-        </button>
-    )
-
     const moreSection = (
         <div className='more'>
             <button>
@@ -145,7 +141,7 @@ function HamburgerMenu({ isLogged }) {
                 {messagesSection}
                 {eventsSection}
                 {myProfileSection}
-                {logoutSection}
+                <LogoutButton />
                 {moreSection}
                 {logoSection}
             </>
