@@ -5,7 +5,7 @@ import actions from '../../app/loginLogout/duck/actions';
 import { useDispatch } from 'react-redux';
 
 //powynosic do osobnych komponentow
-function LoginCard({ data, login }) {
+function LoginCard({ data }) {
     const [isLogin, setIsLogin] = useState(false);
     const [isRegister, setIsRegister] = useState(false);
     const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ function LoginCard({ data, login }) {
         }
 
         const correctCredentials = () => {
-            dispatch(actions.login(user));
+            dispatch(actions.login(user[0]));
         }
 
         (user.length === 0) ? incorrectCredentials() : correctCredentials();
