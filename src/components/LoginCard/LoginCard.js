@@ -3,17 +3,19 @@ import './LoginCard.css';
 import logo from '../../resources/katoMeetApp_Logo.png';
 import actions from '../../app/loginLogout/duck/actions';
 import { useDispatch } from 'react-redux';
+import Starting from "./buttons/Starting";
+import Login from "./buttons/Login";
+import Register from "./buttons/Register";
 
-//powynosic do osobnych komponentow
+//localStorage dla danych logowania uzytkownika ?
+//po kliknieciu w login/register dolozyc stzralke do powrotu
+
 function LoginCard({ data }) {
     const [isLogin, setIsLogin] = useState(false);
     const [isRegister, setIsRegister] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch()
-
-    //localStorage dla danych logowania uzytkownika
-    //po kliknieciu w login/register dolozyc stzralke do powrotu
 
     const handleLoginSubmit = (event) => {
         //na czas ladowania/szukania usera wyswietlic np ladowanie.. albo jakis spinner
@@ -48,70 +50,31 @@ function LoginCard({ data }) {
         setPassword(event.target.value)
     )
 
-    const startingButtons = (
-        <>
-            <div>
-                <button
-                    onClick={() => setIsLogin(true)}>
-                    ZALOGUJ SIĘ
-                </button>
-                <button
-                    onClick={() => setIsRegister(true)}>
-                    ZAREJESTRUJ SIĘ
-                </button>
-            </div>
-
-        </>
-    )
-
-    //za pomoca ref={emailInput} zebrac wartosci w momencie potwierdzenia
-    const loginButtons = (
-        <>
-            <form onSubmit={handleLoginSubmit}>
-                <input
-                    type='text'
-                    placeholder='adres e-mail..'
-                    value={email}
-                    onChange={event => handleEmailChange(event)}
-                />
-                <input
-                    type='password'
-                    placeholder='hasło..'
-                    value={password}
-                    onChange={event => handlePasswordChange(event)}
-                />
-                <button>
-                    ZALOGUJ SIĘ
-                </button>
-            </form>
-        </>
-    )
-
-    const registerButtons = (
-        <>
-            <form onSubmit={handleRegisterSubmit}>
-                <input
-                    type='text'
-                    placeholder='adres e-mail..'
-                    value={email}
-                    onChange={event => handleEmailChange(event)}
-                />
-                <input
-                    type='password'
-                    placeholder='hasło..'
-                    value={password}
-                    onChange={event => handlePasswordChange(event)}
-                />
-                <button>ZAREJESTRUJ SIĘ</button>
-            </form>
-        </>
-    )
+    const handleIsLogin = () => setIsLogin(true);
+    const handleIsRegister = () => setIsRegister(true);
 
     return (
         <div className='loginCard'>
             <img src={logo} className='logo-img' alt='logo' width="300" height="300"  />
             <div className='buttons'>
-                {(isLogin || isRegister) ? (isLogin ? loginButtons : registerButtons) : startingButtons}
+                {(isLogin || isRegister) ?
+                    (isLogin ?
+                        <Login
+                            handleLoginSubmit={handleLoginSubmit}
+                            handleEmailChange={handleEmailChange}
+                            handlePasswordChange={handlePasswordChange}
+                        /> :
+                        <Register
+                            handleRegisterSubmit={handleRegisterSubmit}
+                            handleEmailChange={handleEmailChange}
+                            handlePasswordChange={handlePasswordChange}
+                        />
+                    ) :
+                    <Starting
+                        handleIsLogin={handleIsLogin}
+                        handleIsRegister={handleIsRegister}
+                    />
+                }
             </div>
         </div>
     );
