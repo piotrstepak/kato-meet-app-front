@@ -15,10 +15,10 @@ function PersonCard({ data }) {
 
     const handleButtonAction = (id, action) => {
         switch (action) {
-            case 'addToLikedUsers':
+            case 'ADD_TO_LIKED_USERS':
                 setPeople(removePersonFromData(people, id))
                 break;
-            case 'addToDislikedUsers':
+            case 'ADD_TO_DISLIKED_USERS':
                 setPeople(removePersonFromData(people, id))
                 break;
             default:
