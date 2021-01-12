@@ -1,10 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Register = ({ handleRegisterSubmit, handleEmailChange, handlePasswordChange }) =>  (
+const Register = ({ handleRegisterSubmit, handleNameChange, handleAgeChange, handleEmailChange, handlePasswordChange }) =>  (
     <>
         <form onSubmit={handleRegisterSubmit}>
+            <Link to='/' >
+                Cofnij
+            </Link>
             <input
-                type='text'
+            type="text"
+            placeholder='imię..'
+            onChange={handleNameChange}
+            />
+            <input
+                type="number"
+                placeholder='wiek..'
+                onChange={handleAgeChange}
+            />
+            <input
+                type='email'
                 placeholder='adres e-mail..'
                 // value={email}
                 onChange={event => handleEmailChange(event)}

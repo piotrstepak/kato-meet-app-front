@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 //za pomoca ref={emailInput} zebrac wartosci w momencie potwierdzenia
 const Login = ({ handleLoginSubmit, handleEmailChange, handlePasswordChange }) => (
     <>
         <form onSubmit={handleLoginSubmit}>
+            <Link to='/' >
+                Cofnij
+            </Link>
             <input
                 type='text'
                 placeholder='adres e-mail..'

@@ -59,7 +59,8 @@ form input, button {
     font-family: 'Indie Flower', cursive;
 }
 
-.loginCard button, input[type=submit] {
+/*, .loginCard a*/
+.loginCard button, .loginCard input[type=submit] {
     cursor: pointer;
     background-color: #E68DE3;
     border: none;
@@ -94,4 +95,8 @@ input {
     width: 85%;
     text-align: center;
     font-family: 'Indie Flower', cursive;
+}
+
+a {
+    text-decoration: none;
 }
