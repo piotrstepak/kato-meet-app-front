@@ -13,7 +13,21 @@ const loginLogoutReducer = (state = INITIAL_LOGIN, action) => {
             }
         case types.LOGOUT:
             return {
-                user: '', isLogged: false
+                user: {
+                    "likedUsers": [],
+                    "dislikedUsers": [],
+                    "likedBy": [],
+                    "_id": "",
+                    "name": "",
+                    "image": "",
+                    "age": null,
+                    "email": "",
+                    "password": "",
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "__v": 0
+                },
+                isLogged: false
             }
         default:
             return state
