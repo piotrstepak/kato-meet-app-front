@@ -22,7 +22,7 @@ const loginLogoutReducer = (state = INITIAL_LOGIN, action) => {
                     "image": "",
                     "age": null,
                     "email": "",
-                    "password": "",
+                    // "password": "",
                     "createdAt": "",
                     "updatedAt": "",
                     "__v": 0
