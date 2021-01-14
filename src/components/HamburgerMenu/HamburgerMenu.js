@@ -14,7 +14,8 @@ import Events from "./buttons/Events";
 import Logo from "./buttons/Logo";
 import OpenMenu from "./buttons/OpenMenu";
 import More from "./buttons/More";
-//import like * from buttons
+import RestartDB from "./buttons/RestartDB";
+//TODO import like * from buttons
 
 function HamburgerMenu({ isLogged }) {
     const [openMenu, setOpenMenu] = useState(false);
@@ -36,6 +37,7 @@ function HamburgerMenu({ isLogged }) {
                 <Application />
                 <Contact />
                 <LegalInformationSection />
+                <RestartDB />
             </>
         )
     }
