@@ -4,12 +4,13 @@ const AUTH_API_URL = 'http://localhost:3001/auth/';
 
 //rewrite to async/await
 
-const register = (name, age, email, password) => {
+const register = (name, age, email, password, image = "") => {
     return axios.post(`${AUTH_API_URL}register`, {
         name,
         age,
         email,
         password,
+        image,
     });
 }
 
