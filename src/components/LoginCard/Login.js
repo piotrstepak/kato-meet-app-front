@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoginCard.css';
-import logo from '../../resources/katoMeetApp_Logo.png';
+import logo from '../../resources/logo_two_colors.png';
 import actions from '../../app/loginLogout/duck/actions';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
@@ -40,7 +40,7 @@ function Login() {
     return (
         //to undo the button instead of the link ?
         <div className='loginCard'>
-            <img src={logo} className='logo-img' alt='logo' width="300" height="300"  />
+            <img src={logo} className='logo-img' alt='logo' width="300" height="280"  />
             <div className='buttons'>
                 <form onSubmit={handleLoginSubmit}>
                     <Link to='/' >

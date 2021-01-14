@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './LoginCard.css';
 import { Link, useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";
+import logo from '../../resources/logo_two_colors_long.png';
 
 //add client side validation with formik
 
@@ -44,6 +45,7 @@ function Register() {
     return (
         //to undo the button instead of the link ?
         <div className='loginCard'>
+            <img src={logo} className='logo-img' alt='logo'  width="300" height="120" />
             <div className='buttons'>
                 <form onSubmit={handleRegisterSubmit}>
                     <Link to='/' >

@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginCard.css';
-import logo from '../../resources/katoMeetApp_Logo.png';
+import logo from '../../resources/logo_two_colors.png';
 import { useHistory } from 'react-router-dom';
 
 function LoginCard() {
@@ -15,7 +15,7 @@ function LoginCard() {
 
     return (
         <div className='loginCard'>
-            <img src={logo} className='logo-img' alt='logo' width="300" height="300"  />
+            <img src={logo} className='logo-img' alt='logo' width="300" height="320"  />
             <div className='buttons'>
                     <button
                         onClick={() => handleIsLogin()}>
