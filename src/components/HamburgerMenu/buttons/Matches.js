@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Matches = () => (
-    <button>
+    // <button>
+    //     PARY
+    // </button>
+    <Link to='/matches'>
         PARY
-    </button>
+    </Link>
 )
 
 export default Matches;
