@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyProfile = () => (
-    <button>
+    // <button>
+    //     MÓJ PROFIL
+    // </button>
+    <Link to='/my-profile'>
         MÓJ PROFIL
-    </button>
+    </Link>
 )
 
 export default MyProfile;

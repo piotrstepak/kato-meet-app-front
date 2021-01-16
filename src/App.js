@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import HamburgerMenu from "./components/HamburgerMenu/HamburgerMenu";
-import LoginCard from "./components/LoginCard/LoginCard";
 import PersonCard from "./components/PersonCard/PersonCard";
 import NotFound from "./components/NotFound/NotFaund";
 import { useSelector } from 'react-redux';
@@ -10,6 +9,7 @@ import Login from "./components/LoginCard/Login";
 import Start from "./components/LoginCard/Start";
 import Register from "./components/LoginCard/Register";
 import Matches from "./components/Matches/Matches";
+import MyProfile from "./components/MyProfile/MyProfile";
 
 function App() {
     const isLogged = useSelector(state => state.loginLogout.isLogged)
@@ -31,7 +31,7 @@ function App() {
                     <Route path='/matches' component={Matches} />
                     {/*<Route path='/messages' component={Messages} />//id z dana osoba*/}
                     {/*<Route path='/events' component={Events} />*/}
-                    {/*<Route path='/my-profile' component={MyProfile} />*/}
+                    <Route path='/my-profile' component={MyProfile} />
                     {/*<Route path='/more' component={More} />*/}
                     <Route component={NotFound} />
                 </Switch>
