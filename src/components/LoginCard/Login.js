@@ -5,6 +5,7 @@ import actions from '../../app/loginLogout/duck/actions';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";
+import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
 
 //localStorage with login user data ?
 //add client side validation with formik
@@ -44,7 +45,7 @@ function Login() {
             <div className='buttons'>
                 <form onSubmit={handleLoginSubmit}>
                     <Link to='/' >
-                        Cofnij
+                        <UndoRoundedIcon />
                     </Link>
                     <input
                         type='text'

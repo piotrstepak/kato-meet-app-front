@@ -3,6 +3,7 @@ import './LoginCard.css';
 import { Link, useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";
 import logo from '../../resources/logo_two_colors_long.png';
+import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
 
 //add client side validation with formik
 
@@ -49,7 +50,7 @@ function Register() {
             <div className='buttons'>
                 <form onSubmit={handleRegisterSubmit}>
                     <Link to='/' >
-                        Cofnij
+                        <UndoRoundedIcon />
                     </Link>
                     <input
                         type="text"
