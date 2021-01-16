@@ -1,10 +1,10 @@
 import React from 'react';
-import mockDB from "../../../utilities/mockDB";
+import mockDB from "../../../utils/mockDB";
 
 const RestartDB = () => {
-    const handleClick = () => {
-        mockDB.clearDB();
-        mockDB.fillDB();
+    const handleClick = async () => {
+        await mockDB.clearDB();
+        await mockDB.fillDB();
     }
 
     return (

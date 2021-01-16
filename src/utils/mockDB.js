@@ -9,13 +9,11 @@ const clearDB = async () => {
     const currentDB = await res.json();
     currentDB.map(user => {
         console.log(user)//helper print
-        axios.delete(`${USERS_API_URL}${user._id}`)
+        return axios.delete(`${USERS_API_URL}${user._id}`)
     })
 }
 
 const fillDB = async () => {
-    // const response = await fetch(data);
-    // const dataToFillDB = await response.json();
     const dataToFillDB = [...data];
     console.log(dataToFillDB)
     dataToFillDB.map(user => {
