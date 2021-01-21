@@ -1,21 +1,42 @@
 import ArrowDropDownRoundedIcon from "@material-ui/icons/ArrowDropDownRounded";
-import React from "react";
+import React, { useState } from "react";
+import { StyledDropDown,
+    StyledDropDownButton,
+    StyledDropDownList } from "../styled/StyledDropDown";
+import Link from './Link';
 
-const Contact = () => (
-    <div className='contact'>
-        <button>
-            KONTAKT
-            <ArrowDropDownRoundedIcon
-                fontSize='large'
-                className='hamburgerMenu-dropDown-icon'
-            />
-        </button>
-        <div className='contact-dropDown'>
-            <button>facebook</button>
-            <button>instagram</button>
-            <button>e-mail</button>
-        </div>
-    </div>
-)
+//add dropdowns links to one generic
+function Contact() {
+    const [isClicked, setIsClicked] = useState(false);
 
+    return (
+        <StyledDropDownList>
+            <StyledDropDownButton onClick={() => {
+                setIsClicked(!isClicked)
+                console.log(isClicked)
+            }}>
+                KONTAKT
+                <ArrowDropDownRoundedIcon
+                    fontSize='large'
+                    className='hamburgerMenu-dropDown-icon'
+                />
+            </StyledDropDownButton>
+            {isClicked ?
+                (<StyledDropDown>
+                    <Link
+                        path='#facebook'
+                        name='facebook'
+                    />
+                    <Link
+                        path='#instagram'
+                        name='instagram'
+                    />
+                    <Link
+                        path='#email'
+                        name='email'
+                    />
+                </StyledDropDown>) : null}
+        </StyledDropDownList>
+    )
+}
 export default Contact;

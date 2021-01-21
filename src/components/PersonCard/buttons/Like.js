@@ -1,11 +1,12 @@
-import likeIcon from "../../../resources/like.png";
+import likeIcon from "../../../resources/images/actions/like.png";
 import React from "react";
+import { ActionButton } from '../styled/StyledActions';
 
 const Like = ({ handleButtonAction, id }) => (
-    <button
+    <ActionButton
         onClick={() => handleButtonAction(id, 'ADD_TO_LIKED_USERS')}>
         <img src={likeIcon} alt='like'/>
-    </button>
+    </ActionButton>
 )
 
 export default Like;

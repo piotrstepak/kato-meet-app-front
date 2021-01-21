@@ -1,9 +1,10 @@
 import React from "react";
 import Like from './Like';
 import Dislike from "./Dislike";
+import { StyledActions } from "../styled/StyledActions";
 
 const Actions = ({ handleButtonAction, id }) => (
-    <div className='person-actions'>
+    <StyledActions>
         <Dislike
             handleButtonAction={handleButtonAction}
             id={id}
@@ -12,7 +13,7 @@ const Actions = ({ handleButtonAction, id }) => (
             handleButtonAction={handleButtonAction}
             id={id}
         />
-    </div>
+    </StyledActions>
 )
 
 export default Actions;

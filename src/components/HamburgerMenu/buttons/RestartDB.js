@@ -1,5 +1,6 @@
 import React from 'react';
 import mockDB from "../../../utils/mockDB";
+import StyledButton from "../styled/StyledButton";
 
 const RestartDB = () => {
     const handleClick = async () => {
@@ -8,9 +9,9 @@ const RestartDB = () => {
     }
 
     return (
-        <button onClick={() => handleClick()}>
+        <StyledButton onClick={() => handleClick()}>
             ResetBazy
-        </button>
+        </StyledButton>
     );
 }
 

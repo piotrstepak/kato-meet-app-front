@@ -1,28 +1,39 @@
-import React from "react";
+import React, {useState} from "react";
 import ArrowDropDownRoundedIcon from "@material-ui/icons/ArrowDropDownRounded";
-import Mission from "./Mission";
-import HowToStart from "./HowToStart";
-import Application from "./Application";
 import Contact from "./Contact";
 import LegalInformationSection from "./LegalInformation";
+import { StyledDropDown,
+    StyledDropDownButton,
+    StyledDropDownList } from "../styled/StyledDropDown";
+import Link from "./Link";
 
+//add dropdowns links to one generic
 const More = () => (
-    <div className='more'>
-        <button>
+    <StyledDropDownList>
+        <StyledDropDownButton>
             WIĘCEJ
             <ArrowDropDownRoundedIcon
                 fontSize='large'
                 className='hamburgerMenu-dropDown-icon'
             />
-        </button>
-        <div className='more-dropDown'>
-            <Mission />
-            <HowToStart />
-            <Application />
+        </StyledDropDownButton>
+        <StyledDropDown>
+            <Link
+                path='/mission'
+                name='MISJA'
+            />
+            <Link
+                path='/how-to-start'
+                name='JAK ZACZĄĆ'
+            />
+            <Link
+                path='/application'
+                name='APLIKACJA'
+            />
             <Contact />
             <LegalInformationSection />
-        </div>
-    </div>
+        </StyledDropDown>
+    </StyledDropDownList>
 )
 
 export default More;

@@ -1,22 +1,32 @@
 import ArrowDropDownRoundedIcon from "@material-ui/icons/ArrowDropDownRounded";
 import React from "react";
+import Link from './Link';
+import { StyledDropDown,
+    StyledDropDownButton,
+    StyledDropDownList } from "../styled/StyledDropDown";
 
+//add dropdowns links  to one generic
 const LegalInformation = () => (
-    <div className='information'>
-        <button>
+    <StyledDropDownList>
+        <StyledDropDownButton>
             INFORMACJE PRAWNE
             <ArrowDropDownRoundedIcon
                 fontSize='large'
                 className='hamburgerMenu-dropDown-icon'
             />
-        </button>
+        </StyledDropDownButton>
         {/*{infoContent ? infoClicked() : infoNotClicked()}*/}
-        <div className='information-dropDown'>
-            <button>prywatność</button>
-            <button>regulamin</button>
-            <button>polityka</button>
-        </div>
-    </div>
+        <StyledDropDown>
+            <Link
+                path='/privacy-policy'
+                name='polityka prywatności'
+            />
+            <Link
+                path='/regulations'
+                name='regulamin'
+            />
+        </StyledDropDown>
+    </StyledDropDownList>
 )
 
 export default LegalInformation;

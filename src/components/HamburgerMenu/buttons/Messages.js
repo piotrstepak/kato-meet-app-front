@@ -1,10 +1,10 @@
 import React from "react";
+import StyledButton from "../styled/StyledButton";
 
 const Messages = () => (
-    <button>
+    <StyledButton>
         WIADOMOŚCI
-    </button>
+    </StyledButton>
 )
 
 export default Messages;
-

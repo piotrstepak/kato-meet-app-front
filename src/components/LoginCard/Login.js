@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './LoginCard.css';
-import logo from '../../resources/logo_two_colors.png';
+import logo from '../../resources/images/logos/logo_two_colors.png';
 import actions from '../../app/loginLogout/duck/actions';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";
-import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
+import Layout from "../../layout/layout";
+import StyledButton from "../UI/StyledButton";
+import StyledInput from "../UI/StyledInput";
+import StyledFormDiv from './styled/StyledFormDiv';
 
 //localStorage with login user data ?
 //add client side validation with formik
@@ -34,37 +36,38 @@ function Login() {
             dispatch(actions.login(user));
             history.push('/logged');
         } catch (err) {
+            // setLoading(false);
+            // console.log('loading: ', loading)
             alert('Niewłaściwy email lub hasło..')
         }
     }
 
     return (
-        //to undo the button instead of the link ?
-        <div className='loginCard'>
-            <img src={logo} className='logo-img' alt='logo' width="300" height="280"  />
-            <div className='buttons'>
-                <form onSubmit={handleLoginSubmit}>
-                    <Link to='/' >
-                        <UndoRoundedIcon />
-                    </Link>
-                    <input
-                        type='text'
-                        placeholder='adres e-mail..'
-                        // value={email}
-                        onChange={event => handleEmailChange(event)}
-                    />
-                    <input
-                        type='password'
-                        placeholder='hasło..'
-                        // value={password}
-                        onChange={event => handlePasswordChange(event)}
-                    />
-                    <button>
-                        ZALOGUJ SIĘ
-                    </button>
-                </form>
-            </div>
-        </div>
+        <Layout>
+            <img src={logo} className='logo-img' alt='logo' width="260" height="240"  />
+            <StyledFormDiv>
+                {/*{loading ? */}
+                {/*    <p>{'Ładuję...'}</p> : */}
+                    <form onSubmit={handleLoginSubmit}>
+                        <StyledInput
+                            type='text'
+                            placeholder='adres e-mail..'
+                            // value={email}
+                            onChange={event => handleEmailChange(event)}
+                        />
+                        <StyledInput
+                            type='password'
+                            placeholder='hasło..'
+                            // value={password}
+                            onChange={event => handlePasswordChange(event)}
+                        />
+                        <StyledButton>
+                            ZALOGUJ SIĘ
+                        </StyledButton>
+                    </form>
+                {/*}*/}
+            </StyledFormDiv>
+        </Layout>
     );
 }
 

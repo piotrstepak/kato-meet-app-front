@@ -1,11 +1,12 @@
-import dislikeIcon from "../../../resources/dislike.png";
+import dislikeIcon from "../../../resources/images/actions/dislike.png";
 import React from "react";
+import { ActionButton } from '../styled/StyledActions';
 
 const Dislike = ({ handleButtonAction, id }) =>  (
-    <button
+    <ActionButton
         onClick={() => handleButtonAction(id, 'ADD_TO_DISLIKED_USERS')}>
         <img src={dislikeIcon} alt='dislike'/>
-    </button>
+    </ActionButton>
 )
 
 export default Dislike;
