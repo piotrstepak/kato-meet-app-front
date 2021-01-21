@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './PersonCard.css';
 import Person from './Person';
 import WaitingRoomCard from "./WaitingRoomCard";
 import { useSelector } from 'react-redux';
 import axios from "axios";
 import authHeader from "../../services/authHeader.service";
+import Actions from "./buttons/Actions";
 
 const setEmptyUser = {
     "likedUsers": [],
@@ -121,16 +121,22 @@ function PersonCard() {
     }
 
     return (
-        <div className='personCard'>
+        <>
             {personToDisplay && personToDisplay._id ? (
+                <>
                 <Person
                     key={personToDisplay._id}
                     person={personToDisplay}
                     handleButtonAction={handleButtonAction}
                 />
+                <Actions
+                    handleButtonAction={handleButtonAction}
+                    id={personToDisplay._id}
+                />
+                </>
             ) : <WaitingRoomCard />
             }
-        </div>
+        </>
     );
 }
 
