@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Matches.css';
-// import data from '../../data.json';
 import authHeader from "../../services/authHeader.service";
 import { useSelector } from "react-redux";
 import UserRow from './UserRow.matches';
-
+import Layout from "../../layout/layout";
+import { StyledUl, StyledH2 } from "./styled/StyledMatches";
+// import { useHistory } from 'react-router-dom';
 
 function Matches() {
     const [matches, setMatches] = useState([]);
     const loggedUser = useSelector(state => state.loginLogout.user);//consider store with hooks
     const MATCHES_API = 'http://localhost:3001/users/matches/';
-    // console.log(matches)
+    // const history = useHistory();
 
     useEffect(() => {
         axios.post(MATCHES_API, {
@@ -21,8 +20,8 @@ function Matches() {
             headers: authHeader()
         })
                 .then(res => {
-                    setMatches(res.data)
-                    console.log(matches)//helper print
+                    console.log('DATA: ', res.data)
+                    setMatches(() => res.data)
                 })
                 .catch(err => {
                     console.log(err);
@@ -43,19 +42,17 @@ function Matches() {
 
     const matchesList = () => {
         return matches.map(user => {
-            return <UserRow user={user} key={user.id} />
+            return <UserRow user={user} key={user._id}/>
         })
     }
 
     return (
-        <div className='matches'>
-            <h2>Twoje pary</h2>
-            <table>
-               <tbody>
-                    {matchesList()}
-               </tbody>
-            </table>
-        </div>
+        <Layout>
+            <StyledH2>Twoje pary</StyledH2>
+            <StyledUl>
+                {matchesList()}
+            </StyledUl>
+        </Layout>
     );
 }
 
