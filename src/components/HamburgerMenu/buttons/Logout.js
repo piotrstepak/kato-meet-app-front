@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import AuthService from "../../../services/auth.service";
+import StyledButton from "../styled/StyledButton";
 
 function Logout() {
     const dispatch = useDispatch();
@@ -18,15 +19,16 @@ function Logout() {
     }
 
     return (
-        <button onClick={() => handleLogout()}>
+        <StyledButton onClick={() => handleLogout()}>
             WYLOGUJ
-        </button>
+        </StyledButton>
+    // <Link
+    //     to='/'
+    //     onClick={() => handleLogout()}>
+    //     WYLOGUJ
+    // </Link>
     );
-    {/*<Link*/}
-    {/*    to='/'*/}
-    {/*    onClick={() => handleLogout()}>*/}
-    {/*    WYLOGUJ*/}
-    {/*</Link>*/}
+
 }
 
 export default Logout;

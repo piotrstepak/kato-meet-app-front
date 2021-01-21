@@ -8,7 +8,9 @@
     "password": "vitalik",
     "likedUsers": [],
     "dislikedUsers": [],
-    "likedBy": []
+    "likedBy": [],
+    "description":  "I'm co-founder of Ethereum",
+    "sex": "man"
   },
   {
     "id": 1,
@@ -19,7 +21,9 @@
     "password": "magda",
     "likedUsers": [],
     "dislikedUsers": [],
-    "likedBy": []
+    "likedBy": [],
+    "description":  "I love cooking and I hate mess in the kitchen",
+    "sex": "woman"
   },
   {
     "id": 2,
@@ -30,6 +34,8 @@
     "password": "grycanka",
     "likedUsers": [],
     "dislikedUsers": [],
-    "likedBy": []
+    "likedBy": [],
+    "description":  "I like eating and thin men",
+    "sex": "man"
   }
 ]

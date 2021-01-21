@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './LoginCard.css';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";
-import logo from '../../resources/logo_two_colors_long.png';
-import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
+import logo from '../../resources/images/logos/logo_two_colors_long.png';
+import Layout from "../../layout/layout";
+import StyledButton from "../UI/StyledButton";
+import StyledInput from "../UI/StyledInput";
+import StyledFormDiv from './styled/StyledFormDiv';
 
 //add client side validation with formik
 
@@ -44,40 +46,37 @@ function Register() {
     }
 
     return (
-        //to undo the button instead of the link ?
-        <div className='loginCard'>
+        <Layout>
             <img src={logo} className='logo-img' alt='logo'  width="300" height="120" />
-            <div className='buttons'>
+            <StyledFormDiv>
                 <form onSubmit={handleRegisterSubmit}>
-                    <Link to='/' >
-                        <UndoRoundedIcon />
-                    </Link>
-                    <input
+
+                    <StyledInput
                         type="text"
                         placeholder='imię..'
                         onChange={handleNameChange}
                     />
-                    <input
+                    <StyledInput
                         type="number"
                         placeholder='wiek..'
                         onChange={handleAgeChange}
                     />
-                    <input
+                    <StyledInput
                         type='email'
                         placeholder='adres e-mail..'
                         // value={email}
                         onChange={event => handleEmailChange(event)}
                     />
-                    <input
+                    <StyledInput
                         type='password'
                         placeholder='hasło..'
                         // value={password}
                         onChange={event => handlePasswordChange(event)}
                     />
-                    <button>ZAREJESTRUJ SIĘ</button>
+                    <StyledButton>ZAREJESTRUJ SIĘ</StyledButton>
                 </form>
-            </div>
-        </div>
+            </StyledFormDiv>
+        </Layout>
     );
 }
 

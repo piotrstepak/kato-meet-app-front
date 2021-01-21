@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import './NotFaund.css';
+import StyledNotFound from "./styled/StyledNotFaund";
+import GlobalStyle from "../../layout/GlobalStyle";
 
 function NotFound({ location }) {
     const [counter, setCounter] = useState(5);
@@ -13,11 +14,14 @@ function NotFound({ location }) {
     }, [])//counter
 
     return (
-        <div className='notFound'>
-            <p>Not match for <code>{location.pathname}</code></p>
-            <p>Redirect to homepage in {counter} seconds..</p>
-            {counter === 0 && <Redirect to='/' />}
-        </div>
+        <>
+            <GlobalStyle/>
+            <StyledNotFound>
+                <p>Not match for <code>{location.pathname}</code></p>
+                <p>Redirect to homepage in {counter} seconds..</p>
+                {counter === 0 && <Redirect to='/' />}
+            </StyledNotFound>
+        </>
     );
 }
 

@@ -1,68 +1,27 @@
 import React, { useState } from 'react';
-import './HamburgerMenu.css';
-import Logout from "./buttons/Logout";
-import LegalInformationSection from "./buttons/LegalInformation";
-import Contact from "./buttons/Contact";
-import Application from "./buttons/Application";
-import CloseMenu from "./buttons/CloseMenu";
-import Matches from "./buttons/Matches";
-import Mission from "./buttons/Mission";
-import Messages from "./buttons/Messages";
-import MyProfile from "./buttons/MyProfile";
-import HowToStart from "./buttons/HowToStart";
-import Events from "./buttons/Events";
-import Logo from "./buttons/Logo";
-import OpenMenu from "./buttons/OpenMenu";
-import More from "./buttons/More";
-import RestartDB from "./buttons/RestartDB";
-//TODO import like * from buttons
+import StyledHamburger from "./styled/StyledHamburger";
+import MenuStart from './MenuStart'
+import MenuLogged from "./MenuLogged";
 
 function HamburgerMenu({ isLogged }) {
-    const [openMenu, setOpenMenu] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenMenu = () => {
-        setOpenMenu(!openMenu);
-    }
-
-    const handleMenuClosed = () => {
-        return <OpenMenu handleCloseMenu={handleOpenMenu}/>
-    }
-
-    const handleStartingMenuOpened = () => {
-        return (
-            <>
-                <CloseMenu handleOpenMenu={handleOpenMenu}/>
-                <Mission />
-                <HowToStart />
-                <Application />
-                <Contact />
-                <LegalInformationSection />
-                <RestartDB />
-            </>
-        )
-    }
-
-    const handleLoggedMenuOpened = () => {
-        return (
-            <>
-                <CloseMenu handleOpenMenu={handleOpenMenu}/>
-                <Matches />
-                <Messages />
-                <Events />
-                <MyProfile />
-                <Logout />
-                <More />
-                <Logo />
-            </>
-        )
+        setIsOpen(!isOpen);
     }
 
     return (
-        <div className='hamburgerMenu'>
+        <StyledHamburger>
             {isLogged ?
-                (openMenu ? handleLoggedMenuOpened() : handleMenuClosed()) :
-                (openMenu ? handleStartingMenuOpened() : handleMenuClosed())}
-        </div>
+                <MenuLogged
+                    isOpen={isOpen}
+                    handleOpenMenu={handleOpenMenu}
+                /> :
+                <MenuStart
+                    isOpen={isOpen}
+                    handleOpenMenu={handleOpenMenu}
+                />}
+        </StyledHamburger>
     );
 }
 

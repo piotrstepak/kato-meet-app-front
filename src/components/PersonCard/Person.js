@@ -1,23 +1,19 @@
 import React from 'react';
-import Actions from "./buttons/Actions";
+import Layout from "../../layout/layout";
+import StyledImage from "./styled/StyledImage";
+import StyledDescription from './styled/StyledDescription';
 
-function Person({ person, handleButtonAction }) {
+function Person({ person }) {
     const { id, name, age, image } = person;
 
     return (
         <>
-            <div className='person'>
-                <div className='person-photo'>
-                    <img src={image} alt={name} />
-                </div>
-                <div className='person-description'>
-                    <p className='person-name-age'>{name}, {age}</p>
-                </div>
-            </div>
-            <Actions
-                handleButtonAction={handleButtonAction}
-                id={id}
-            />
+            <Layout>
+                <StyledImage src={image} alt={name} />
+                <StyledDescription>
+                    <p>{name}, {age}</p>
+                </StyledDescription>
+            </Layout>
         </>
     );
 }

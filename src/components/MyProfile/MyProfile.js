@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { useSelector } from "react-redux";
 import axios from "axios";
-import UndoRoundedIcon from "@material-ui/icons/UndoRounded";
-import { Link } from "react-router-dom";
-import '../LoginCard/LoginCard.css';
+import Layout from "../../layout/layout";
+import StyledButton from "../UI/StyledButton";
+import StyledInput from "../UI/StyledInput";
+import StyledFormDiv from '../LoginCard/styled/StyledFormDiv';
+import StyledImage from "./styled/StyledImage";
 
 function MyProfile() {
     let loggedUser = useSelector(state => state.loginLogout.user);//consider store with hooks
@@ -50,40 +52,38 @@ function MyProfile() {
     )
 
     return (
-        //className do wymiany
-        <div className='loginCard'>
-            <img src={loggedUser.image} className='logo-img' alt='logo' width="100" height="100"  />
-            <form onSubmit={handleUpdateSubmit}>
-                <Link to='/logged' >
-                    <UndoRoundedIcon />
-                </Link>
-                <input
-                    type="text"
-                    placeholder='imię..'
-                    value={name}
-                    onChange={handleNameChange}
-                />
-                <input
-                    type="number"
-                    placeholder='wiek..'
-                    value={age}
-                    onChange={handleAgeChange}
-                />
-                <input
-                    type='email'
-                    placeholder='adres e-mail..'
-                    value={email}
-                    onChange={event => handleEmailChange(event)}
-                />
-                <input
-                    type='password'
-                    placeholder='hasło..'
-                    // value={password}
-                    onChange={event => handlePasswordChange(event)}
-                />
-                <button>Edytuj</button>
-            </form>
-        </div>
+        <Layout>
+            <StyledImage src={loggedUser.image} className='logo-img' alt='logo' width="100" height="100"  />
+            <StyledFormDiv>
+                <form onSubmit={handleUpdateSubmit}>
+                    <StyledInput
+                        type="text"
+                        placeholder='imię..'
+                        value={name}
+                        onChange={handleNameChange}
+                    />
+                    <StyledInput
+                        type="number"
+                        placeholder='wiek..'
+                        value={age}
+                        onChange={handleAgeChange}
+                    />
+                    <StyledInput
+                        type='email'
+                        placeholder='adres e-mail..'
+                        value={email}
+                        onChange={event => handleEmailChange(event)}
+                    />
+                    <StyledInput
+                        type='password'
+                        placeholder='hasło..'
+                        // value={password}
+                        onChange={event => handlePasswordChange(event)}
+                    />
+                    <StyledButton>Edytuj</StyledButton>
+                </form>
+            </StyledFormDiv>
+        </Layout>
     );
 }
 

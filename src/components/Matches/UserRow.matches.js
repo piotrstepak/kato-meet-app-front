@@ -1,25 +1,33 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import { StyledRow, StyledButton, StyledLine } from "./styled/StyledMatches";
+import { useHistory } from 'react-router-dom';
 
-const UserRow = ({ _id, name, age, image }) => (
+//todo remove users from matches
+function UserRow({ user }) {
     // const { id, name, age, image } = props;
-    <tr key={_id}>
-        <td>
-            <img src={image} alt={name} />
-        </td>
-        <td>{name}</td>
-        <td>
-            <Link to={'/messages/' + _id}>Porozmawiaj</Link>
-        </td>
-        <td>
-            <Link to={'/matches/' + name}>Zobacz profil</Link>
-        </td>
-        {/*_id instead id*/}
+    const history = useHistory();
 
-        <td>
-            Usuń
-        </td>
-    </tr>
-)
+    //infinite clicks while rendering wtf?
+    const handleLiClick = (name) => {
+        console.log("CLICK")//helper print
+        history.push(`/matches/${name.toLowerCase()}`);
+    }
+
+    return (
+        <>
+            <StyledLine/>
+            {/*<StyledRow key={user._id} onClick={handleLiClick(user.name)}>*/}
+            <StyledRow key={user._id}>
+                <img src={user.image} alt={user.name} />
+                <p>{user.name}, {user.age}</p>
+                <Link to={'/messages/' + user._id}>Napisz</Link>
+                <Link to={'/matches/' + user._id}>Profil</Link>
+                {/*user.name.toLowerCase()*/}
+                <StyledButton>Usuń</StyledButton>
+            </StyledRow>
+        </>
+    )
+}
 
 export default UserRow;
