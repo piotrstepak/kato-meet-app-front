@@ -29,7 +29,7 @@ export const StyledDropDown = styled.div`
     }
     
     li {
-        padding: 0;
+        padding: 5px; !important;
     }
     
     p {

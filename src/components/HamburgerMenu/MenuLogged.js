@@ -9,6 +9,11 @@ import logo from "../../resources/images/logos/logo_two_colors_long.png";
 import Logout from './buttons/Logout';
 import DropDown from "./buttons/DropDown";
 import { moreButtons, moreLinks } from './dataToFillDropDown';
+import ForumIcon from '@material-ui/icons/Forum';
+import GroupAddRoundedIcon from '@material-ui/icons/GroupAddRounded';
+import EventNoteRoundedIcon from '@material-ui/icons/EventNoteRounded';
+import PersonRoundedIcon from '@material-ui/icons/PersonRounded';
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 
 //todo fix the dropdown list when the button is near the bottom - open it in the top direction
 const MenuLogged = ({ isOpen, handleOpenMenu }) => {
@@ -27,30 +32,35 @@ const MenuLogged = ({ isOpen, handleOpenMenu }) => {
             {isOpen ? (
                 <StyledUl isOpen={isOpen}>
                     <li>
+                        <GroupAddRoundedIcon/>
                         <Link
                             path='/matches'
                             name='PARY'
                         />
                     </li>
                     <li>
+                        <ForumIcon />
                         <Link
                             path='/messages'
                             name='WIADOMOŚCI'
                         />
                     </li>
                     <li>
+                        <EventNoteRoundedIcon/>
                         <Link
                             path='/events'
                             name='WYDARZENIA'
                         />
                     </li>
                     <li>
+                        <PersonRoundedIcon/>
                         <Link
                             path='/my-profile'
                             name='MÓJ PROFIL'
                         />
                     </li>
                     <li>
+                        <ExitToAppRoundedIcon/>
                         <Logout/>
                     </li>
                     <li>

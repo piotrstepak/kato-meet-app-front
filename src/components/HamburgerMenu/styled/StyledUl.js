@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const StyledUl = styled.ul`
   list-style: none;
   display: flex;
+  //flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-flow: row nowrap;
@@ -15,7 +16,16 @@ const StyledUl = styled.ul`
   
   li {
     padding: 18px 10px;
+    display: flex;
+        : hover {
+              color: #F5A3E4;
+          }
   }
+  
+  svg {
+      //vertical-align: middle;
+      padding: 0 3px 0 0;
+    }
   
   @media (max-width: 992px) {
      flex-flow: column nowrap;
