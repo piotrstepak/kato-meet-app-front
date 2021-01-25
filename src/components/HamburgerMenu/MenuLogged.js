@@ -2,7 +2,7 @@ import Burger from "./Burger";
 import StyledUl from "./styled/StyledUl";
 import Link from "./buttons/Link";
 import React from "react";
-import actions from "../../app/loginLogout/duck/actions";
+import actions from "../../app/userActions/duck/actions";
 import AuthService from '../../services/auth.service';
 import { useDispatch } from "react-redux";
 import logo from "../../resources/images/logos/logo_two_colors_long.png";

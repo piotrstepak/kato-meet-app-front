@@ -3,8 +3,10 @@ import Person from './Person';
 import WaitingRoomCard from "./WaitingRoomCard";
 import { useSelector } from 'react-redux';
 import axios from "axios";
+import { useDispatch } from 'react-redux';
 import authHeader from "../../services/authHeader.service";
 import Actions from "./buttons/Actions";
+import actions from "../../app/userActions/duck/actions";
 
 const setEmptyUser = {
     "likedUsers": [],
@@ -26,6 +28,8 @@ function PersonCard() {
     const loggedUser = useSelector(state => state.loginLogout.user);//consider store with hooks
     const NEXT_USER_TO_DISPLAY_API = 'http://localhost:3001/users/nextUserToDisplay/';
     console.log(`ID: ${loggedUser._id}`)//helper print
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         // const fetchPersonToDisplay = async () => {
@@ -73,12 +77,14 @@ function PersonCard() {
         switch (action) {
             case 'like':
                 updatedLoggedUser.likedUsers.push(personToDisplay._id);// ? first update in store and then clone it and send to db
+                dispatch(actions.update(updatedLoggedUser))
                 // loggedUser.likedUsers.push(personToDisplay._id);
                 // updateLastViewedUserInDB();
                 break;
             case 'dislike':
                 // updatedLoggedUser = loggedUser.dislikedUsers.push(loggedUser.id)
                 updatedLoggedUser.dislikedUsers.push(personToDisplay._id);
+                dispatch(actions.update(updatedLoggedUser))
                 // loggedUser.dislikedUsers.push(personToDisplay._id);
                 break;
             default:

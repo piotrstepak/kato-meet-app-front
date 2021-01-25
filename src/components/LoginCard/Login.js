@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../resources/images/logos/logo_two_colors.png';
-import actions from '../../app/loginLogout/duck/actions';
+import actions from '../../app/userActions/duck/actions';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import AuthService from "../../services/auth.service";

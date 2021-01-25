@@ -1,5 +1,5 @@
 import React from 'react';
-import actions from '../../../app/loginLogout/duck/actions';
+import actions from '../../../app/userActions/duck/actions';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // import { Link } from 'react-router-dom';

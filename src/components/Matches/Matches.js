@@ -4,7 +4,7 @@ import authHeader from "../../services/authHeader.service";
 import { useSelector } from "react-redux";
 import UserRow from './UserRow.matches';
 import Layout from "../../layout/layout";
-import { StyledUl, StyledH2 } from "./styled/StyledMatches";
+import { StyledUl, StyledH2, StyledLine, StyledRow } from "./styled/StyledMatches";
 // import { useHistory } from 'react-router-dom';
 
 function Matches() {
@@ -50,7 +50,14 @@ function Matches() {
         <Layout>
             <StyledH2>Twoje pary</StyledH2>
             <StyledUl>
-                {matchesList()}
+                {matches.length !== 0 ?
+                    matchesList() :
+                    <>
+                        <StyledLine />
+                        <StyledRow>Wygląda na to, że nie masz jeszcze żadnych par</StyledRow>
+                    </>
+                }
+                {/*{matchesList()}*/}
             </StyledUl>
         </Layout>
     );

@@ -5,11 +5,12 @@ const INITIAL_LOGIN = {
     isLogged: false,
 }
 
-const loginLogoutReducer = (state = INITIAL_LOGIN, action) => {
+const userActionsReducer = (state = INITIAL_LOGIN, action) => {
     switch (action.type) {
         case types.LOGIN:
             return {
-                user: action.user, isLogged: true
+                user: action.user,
+                isLogged: true
             }
         case types.LOGOUT:
             return {
@@ -29,9 +30,14 @@ const loginLogoutReducer = (state = INITIAL_LOGIN, action) => {
                 },
                 isLogged: false
             }
+        case types.UPDATE:
+            return {
+                user: action.user,
+                isLogged: true
+            }
         default:
             return state
     }
 }
 
-export default loginLogoutReducer;
+export default userActionsReducer;
