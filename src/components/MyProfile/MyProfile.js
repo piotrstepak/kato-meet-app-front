@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
 import Layout from "../../layout/layout";
 import StyledButton from "../UI/StyledButton";
 import StyledInput from "../UI/StyledInput";
 import StyledFormDiv from '../LoginCard/styled/StyledFormDiv';
 import StyledImage from "./styled/StyledImage";
+import actions from "../../app/userActions/duck/actions";
 
 function MyProfile() {
     let loggedUser = useSelector(state => state.loginLogout.user);//consider store with hooks
     const UPDATE_USER_API = `http://localhost:3001/users/update/${loggedUser._id}`;
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState(loggedUser.email);//all register data to one object ?
     const [password, setPassword] = useState(loggedUser.password);
@@ -22,10 +25,14 @@ function MyProfile() {
             name: name,
             age: age,
             email: email,
+            _id: loggedUser._id,
+            image: loggedUser.image,
             likedUsers: loggedUser.likedUsers,
             dislikedUsers: loggedUser.dislikedUsers,
             likedBy: loggedUser.likedBy
         }
+        dispatch(actions.update(updatedLoggedUser));
+
         axios.put(UPDATE_USER_API, updatedLoggedUser)
             .then(res => {
                 console.log(res.data)

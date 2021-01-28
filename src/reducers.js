@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import loginLogoutReducer from "./app/loginLogout/duck";
+import userActionsReducer from "./app/userActions/duck";
 
 const rootReducer = combineReducers({
-    loginLogout: loginLogoutReducer,
+    loginLogout: userActionsReducer,
 })
 
 export default rootReducer;

@@ -8,7 +8,12 @@ const logout = () => ({
     type: types.LOGOUT
 })
 
+const update = user => ({
+    type: types.UPDATE, user
+})
+
 export default {
     login,
-    logout
+    logout,
+    update
 }
