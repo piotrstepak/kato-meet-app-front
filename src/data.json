@@ -2,40 +2,52 @@
   {
     "id": 0,
     "name": "Vitalik",
-    "image": "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F41563522%2F960x0.jpg%3Ffit%3Dscale",
+    "images": [
+      "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F41563522%2F960x0.jpg%3Ffit%3Dscale",
+      "https://miro.medium.com/max/2976/1*KU5TnhIYgeo72-M4mMzSHQ.png",
+      "https://static.coindesk.com/wp-content/uploads/2017/11/DSC_0034-e1509584750597.jpg"
+    ],
     "age": 26,
     "email": "vitalik@vitalik.com",
     "password": "vitalik",
     "likedUsers": [],
     "dislikedUsers": [],
     "likedBy": [],
-    "description":  "I'm co-founder of Ethereum",
+    "description": "I'm co-founder of Ethereum",
     "sex": "man"
   },
   {
     "id": 1,
     "name": "Magda",
-    "image": "https://d-tm.ppstatic.pl/kadry/77/04/c8ef1e774d9b34d617b59a92fddd.1000.jpg",
+    "images": [
+      "https://d-tm.ppstatic.pl/kadry/77/04/c8ef1e774d9b34d617b59a92fddd.1000.jpg",
+      "https://www.gala.pl/media/cache/default_view/uploads/media/default/0004/83/apel-magdy-gessler-do-polakow_2.jpeg",
+      "https://dziendobry.tvn.pl/media/cache/content_cover/magda-gessler-jpg-1.jpg"
+    ],
     "age": 50,
     "email": "magda@magda.com",
     "password": "magda",
     "likedUsers": [],
     "dislikedUsers": [],
     "likedBy": [],
-    "description":  "I love cooking and I hate mess in the kitchen",
+    "description": "I love cooking and I hate mess in the kitchen",
     "sex": "woman"
   },
   {
     "id": 2,
     "name": "Grycanka",
-    "image": "https://ocdn.eu/pulscms-transforms/1/EE9ktkpTURBXy9jOTQ3MWJkY2RkNTA1NTYzZmUwOGE1MTU4MDk3YTg4YS5qcGeSlQMCFs0CmM0BdZMFzQGQzOE",
+    "images": [
+      "https://ocdn.eu/pulscms-transforms/1/EE9ktkpTURBXy9jOTQ3MWJkY2RkNTA1NTYzZmUwOGE1MTU4MDk3YTg4YS5qcGeSlQMCFs0CmM0BdZMFzQGQzOE",
+      "https://i.iplsc.com/weronika-grycan/0002ESDR5V2N2CLW-C122-F4.jpg",
+      "https://lh3.googleusercontent.com/proxy/ycUMcQFmy114xKRqreYe6vOCQsrnxyQQdagJvBSfXxw3_RrhXB_IsJmq72RBoNf8T-EZlucGa2CbrdvmeN-gLp0ac4pocjVfHexCtfQEwzyNfA"
+    ],
     "age": 31,
     "email": "grycanka@grycanka.com",
     "password": "grycanka",
     "likedUsers": [],
     "dislikedUsers": [],
     "likedBy": [],
-    "description":  "I like eating and thin men",
+    "description": "I like thin men",
     "sex": "man"
   }
 ]
