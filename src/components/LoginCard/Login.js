@@ -40,7 +40,6 @@ function Login() {
         } catch (err) {
             setLoading(false);
             setAreProperCredentials(false);
-            // alert('Niewłaściwy email lub hasło..')
         }
     }
 
@@ -54,13 +53,13 @@ function Login() {
                         <StyledInput
                             type='text'
                             placeholder='adres e-mail..'
-                            // value={email}
+                            value={email}
                             onChange={event => handleEmailChange(event)}
                         />
                         <StyledInput
                             type='password'
                             placeholder='hasło..'
-                            // value={password}
+                            value={password}
                             onChange={event => handlePasswordChange(event)}
                         />
                         {areProperCredentials ?
