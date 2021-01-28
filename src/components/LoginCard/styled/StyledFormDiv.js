@@ -7,4 +7,10 @@ const StyledFormDiv = styled.div`
     padding: 10px;
 `;
 
+export const StyledWrongP = styled.p`
+    text-align: center;
+    font-size: 13px;
+    color: #c10d0d;
+`;
+
 export default StyledFormDiv;

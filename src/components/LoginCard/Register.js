@@ -5,7 +5,8 @@ import logo from '../../resources/images/logos/logo_two_colors_long.png';
 import Layout from "../../layout/layout";
 import StyledButton from "../UI/StyledButton";
 import StyledInput from "../UI/StyledInput";
-import StyledFormDiv from './styled/StyledFormDiv';
+import StyledFormDiv, {StyledWrongP} from './styled/StyledFormDiv';
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 //add client side validation with formik
 
@@ -13,8 +14,9 @@ function Register() {
     const [email, setEmail] = useState('');//all register data to one object ?
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
-    const [age, setAge] = useState(null);
-    // const [loading, setLoading] = useState(false);
+    const [age, setAge] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const history = useHistory();
 
@@ -36,46 +38,60 @@ function Register() {
 
     const handleRegisterSubmit = async event => {
         event.preventDefault();
-        // setLoading(true);
+        setLoading(true);
         try {
+            console.log(name)
             await AuthService.register(name, age, email, password);
             history.push('/login');
         } catch (err) {
-            alert('Podany email już istnieje, zaloguj się lub użyj innego.');
+            setLoading(false);
+            setIsError(true);
+            // alert('Podany email już istnieje, zaloguj się lub użyj innego.');
         }
     }
 
     return (
         <Layout>
             <img src={logo} className='logo-img' alt='logo'  width="300" height="120" />
-            <StyledFormDiv>
-                <form onSubmit={handleRegisterSubmit}>
-
-                    <StyledInput
-                        type="text"
-                        placeholder='imię..'
-                        onChange={handleNameChange}
-                    />
-                    <StyledInput
-                        type="number"
-                        placeholder='wiek..'
-                        onChange={handleAgeChange}
-                    />
-                    <StyledInput
-                        type='email'
-                        placeholder='adres e-mail..'
-                        // value={email}
-                        onChange={event => handleEmailChange(event)}
-                    />
-                    <StyledInput
-                        type='password'
-                        placeholder='hasło..'
-                        // value={password}
-                        onChange={event => handlePasswordChange(event)}
-                    />
-                    <StyledButton>ZAREJESTRUJ SIĘ</StyledButton>
-                </form>
-            </StyledFormDiv>
+            {loading ?
+                <LoadingSpinner/> :
+                <StyledFormDiv>
+                    <form onSubmit={handleRegisterSubmit}>
+                        <StyledInput
+                            type="text"
+                            value={name}
+                            // maxlength = "5"
+                            placeholder='imię..'
+                            onChange={handleNameChange}
+                        />
+                        <StyledInput
+                            type="number"
+                            value={age}
+                            placeholder='wiek..'
+                            onChange={handleAgeChange}
+                        />
+                        <StyledInput
+                            type='email'
+                            placeholder='adres e-mail..'
+                            value={email}
+                            onChange={event => handleEmailChange(event)}
+                        />
+                        <StyledInput
+                            type='password'
+                            placeholder='hasło..'
+                            value={password}
+                            onChange={event => handlePasswordChange(event)}
+                        />
+                        {isError ?
+                            <StyledWrongP>*Upss coś poszło nie tak</StyledWrongP> :
+                            null
+                        }
+                        <StyledButton>
+                            ZAREJESTRUJ SIĘ
+                        </StyledButton>
+                    </form>
+                </StyledFormDiv>
+            }
         </Layout>
     );
 }

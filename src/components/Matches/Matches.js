@@ -5,13 +5,13 @@ import { useSelector } from "react-redux";
 import UserRow from './UserRow.matches';
 import Layout from "../../layout/layout";
 import { StyledUl, StyledH2, StyledLine, StyledRow } from "./styled/StyledMatches";
-// import { useHistory } from 'react-router-dom';
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 function Matches() {
     const [matches, setMatches] = useState([]);
     const loggedUser = useSelector(state => state.loginLogout.user);//consider store with hooks
     const MATCHES_API = 'http://localhost:3001/users/matches/';
-    // const history = useHistory();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.post(MATCHES_API, {
@@ -21,6 +21,7 @@ function Matches() {
         })
                 .then(res => {
                     console.log('DATA: ', res.data)
+                    setLoading(false)
                     setMatches(() => res.data)
                 })
                 .catch(err => {
@@ -50,14 +51,15 @@ function Matches() {
         <Layout>
             <StyledH2>Twoje pary</StyledH2>
             <StyledUl>
-                {matches.length !== 0 ?
-                    matchesList() :
-                    <>
-                        <StyledLine />
-                        <StyledRow>Wygląda na to, że nie masz jeszcze żadnych par</StyledRow>
-                    </>
+                {loading ?
+                    <LoadingSpinner /> :
+                    matches.length !== 0 ?
+                        matchesList() :
+                        <>
+                            <StyledLine />
+                            <StyledRow>Wygląda na to, że nie masz jeszcze żadnych par</StyledRow>
+                        </>
                 }
-                {/*{matchesList()}*/}
             </StyledUl>
         </Layout>
     );

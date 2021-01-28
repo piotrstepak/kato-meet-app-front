@@ -7,7 +7,8 @@ import AuthService from "../../services/auth.service";
 import Layout from "../../layout/layout";
 import StyledButton from "../UI/StyledButton";
 import StyledInput from "../UI/StyledInput";
-import StyledFormDiv from './styled/StyledFormDiv';
+import StyledFormDiv, { StyledWrongP } from './styled/StyledFormDiv';
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 //localStorage with login user data ?
 //add client side validation with formik
@@ -15,7 +16,8 @@ import StyledFormDiv from './styled/StyledFormDiv';
 function Login() {
     const [email, setEmail] = useState('');//all login/register data to one object ?
     const [password, setPassword] = useState('');
-    // const [loading, setLoading] = useState(false);
+    const [areProperCredentials, setAreProperCredentials] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -30,15 +32,14 @@ function Login() {
 
     const handleLoginSubmit = async event => {
         event.preventDefault();
-        // setLoading(true);
         try {
+            setLoading(true);
             const user = await AuthService.login(email, password);
             dispatch(actions.login(user));
             history.push('/logged');
         } catch (err) {
-            // setLoading(false);
-            // console.log('loading: ', loading)
-            alert('Niewłaściwy email lub hasło..')
+            setLoading(false);
+            setAreProperCredentials(false);
         }
     }
 
@@ -46,26 +47,29 @@ function Login() {
         <Layout>
             <img src={logo} className='logo-img' alt='logo' width="260" height="240"  />
             <StyledFormDiv>
-                {/*{loading ? */}
-                {/*    <p>{'Ładuję...'}</p> : */}
+                {loading ?
+                    <LoadingSpinner /> :
                     <form onSubmit={handleLoginSubmit}>
                         <StyledInput
                             type='text'
                             placeholder='adres e-mail..'
-                            // value={email}
+                            value={email}
                             onChange={event => handleEmailChange(event)}
                         />
                         <StyledInput
                             type='password'
                             placeholder='hasło..'
-                            // value={password}
+                            value={password}
                             onChange={event => handlePasswordChange(event)}
                         />
+                        {areProperCredentials ?
+                            null :
+                            <StyledWrongP>*Upss nieprawidłowe hasło lub email</StyledWrongP>}
                         <StyledButton>
                             ZALOGUJ SIĘ
                         </StyledButton>
                     </form>
-                {/*}*/}
+                }
             </StyledFormDiv>
         </Layout>
     );

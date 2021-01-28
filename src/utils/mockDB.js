@@ -2,7 +2,7 @@ import data from '../data.json';
 import axios from "axios";
 
 const USERS_API_URL = 'http://localhost:3001/users/';
-const REGISTER_API_URL = 'http://localhost:3001/auth/register/';
+const REGISTER_MOCK_API_URL = 'http://localhost:3001/auth/registerMock/';
 
 const clearDB = async () => {
     const res = await fetch(USERS_API_URL);
@@ -18,15 +18,17 @@ const fillDB = async () => {
     console.log(dataToFillDB)
     dataToFillDB.map(user => {
         console.log(user)//helper print
-        return axios.post(REGISTER_API_URL, {
+        return axios.post(REGISTER_MOCK_API_URL, {
             name: user.name,
             age: user.age,
             email: user.email,
             password: user.password,
+            description: user.description,
             // likedUsers: user.likedUsers,
             // dislikedUsers: user.dislikedUsers,
             // likedBy: user.likedBy,
-            image: user.image,
+            images: user.images,
+            sex: user.sex,
         })
     })
 }
