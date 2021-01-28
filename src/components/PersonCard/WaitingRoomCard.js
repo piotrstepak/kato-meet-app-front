@@ -6,7 +6,7 @@ import GlobalStyle from "../../layout/GlobalStyle";
 
 //todo add fetching image from db
 function WaitingRoomCard() {
-    const image = useSelector(state => state.loginLogout.user.image);
+    const image = useSelector(state => state.loginLogout.user.images[0]);
 
     return (
         <>

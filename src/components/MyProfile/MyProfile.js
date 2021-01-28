@@ -53,7 +53,7 @@ function MyProfile() {
 
     return (
         <Layout>
-            <StyledImage src={loggedUser.image} className='logo-img' alt='logo' width="100" height="100"  />
+            <StyledImage src={loggedUser.images[0]} className='logo-img' alt='logo' width="100" height="100"  />
             <StyledFormDiv>
                 <form onSubmit={handleUpdateSubmit}>
                     <StyledInput

@@ -12,7 +12,7 @@ const setEmptyUser = {
     "likedBy": [],
     "_id": "",
     "name": "",
-    "image": "",
+    "images": [],
     "age": null,
     "email": "",
     "password": "",
