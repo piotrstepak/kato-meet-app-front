@@ -11,6 +11,7 @@ const StyledButton = styled.button`
     font-weight: bold;
     letter-spacing: 1px;
     font-family: 'Indie Flower', cursive;
+    white-space: nowrap;
     
     :hover {
         color: #F5A3E4;
