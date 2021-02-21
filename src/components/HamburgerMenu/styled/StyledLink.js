@@ -12,6 +12,7 @@ const StyledLink = styled(Link)`
     font-family: 'Indie Flower', cursive;
     text-decoration: none;
     color: black;
+    white-space: nowrap;
     
     :hover {
         color: #F5A3E4;

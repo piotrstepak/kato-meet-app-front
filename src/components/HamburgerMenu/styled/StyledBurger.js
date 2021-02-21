@@ -7,18 +7,19 @@ const StyledBurger = styled.div`
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 20;
+    z-index: 100;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
 
     div {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: #F5A3E4;
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all 0.4s linear;
+        width: 2rem;
+        height: 0.25rem;
+        background-color: #F5A3E4;
+        border-radius: 10px;
+        transform-origin: 1px;
+        transition: all 0.4s linear;
+        z-index: 100;
     
     &:nth-child(1) {
       transform: ${({ isOpen }) => isOpen ? 'rotate(45deg)' : 'rotate(0)'};

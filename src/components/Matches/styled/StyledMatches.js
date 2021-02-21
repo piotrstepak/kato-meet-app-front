@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../UI/StyledButton';
+import { Link } from "react-router-dom";
 
 export const StyledUl = styled.ul`
     padding: 0;
@@ -33,7 +34,8 @@ export const StyledRow = styled.li`
 
 export const StyledButton = styled(Button)`
     padding: 5px 12px;
-    width: 20%;
+    width: 18%;
+    font-size: 13px;
 `;
 
 export const StyledLine = styled.hr`
@@ -44,6 +46,31 @@ export const StyledLine = styled.hr`
     //box-sizing: border-box;
 `;
 
-export const StyledH2 = styled.h2`
+export const StyledLink = styled(Link)`
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.pinkBorder};
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    width: 18%;
+    text-align: center;
+    border-radius: 16px;
+    outline: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: 'Indie Flower', cursive;
+    margin: 5px 0 5px 0;
+    box-sizing: border-box;    
+    text-decoration: none;
+    color: black;
+    
+    :hover {
+        color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.pinkHover};
+    }
+`;
 
+export const StyledH2 = styled.h2`
+    padding: 20px 0 10px 0;
 `;

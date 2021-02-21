@@ -10,6 +10,7 @@ const StyledUl = styled.ul`
   width: 100%;
   transition: width 2s;
   padding: 0 0 0 60px;
+  z-index: 5;
   //:hover {
   //width: 1200px
   //}

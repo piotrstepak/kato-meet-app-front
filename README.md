@@ -1,78 +1,77 @@
-kato-meet-app-front
+# Meet App
+Front-end part of the Meet App project.
 
-TO LOGIN:
+Tech stack:
+* React
+* JavaScript
+* JSX
+* HTML5
+* CSS3
+* Redux
+* JSON Web Tokens
 
--email: vitalik@vitalik.com
+[Here you can find the Back-end part](https://github.com/piotrstepak/meet-app-back)
 
--password: vitalik
+Meet App is build on the MERN stack and its principle of operation is similar to the popular Tinder app, it means 
+it is an application that allows you to meet new people.
 
-# Getting Started with Create React App
+### Important
+The project is under development and work on it is temporary suspended, 
+it is not yet deployed and it currently works on localhost, due to the privacy of the MongoDB 
+access key it is not possible to use the application locally after cloning repository(only starting page).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+### To see starting page, in the project directory, you can run:
 ### `npm start`
-
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You should see:
+![start](docs/start.png)
 
-### `npm test`
+## Progress summary
+Implemented features:
+* register new user
+![register_short_menu](docs/register_short_menu.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* login
+![login_long_menu](docs/login_long_menu.png)
 
-### `npm run build`
+* depending on the screen size two different navigation bars(you can see above)
+* update user
+    * scroll inside window
+    ![update](docs/update.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* browse users
+    * like/dislike user
+    * check user description
+    * browse user photo gallery
+    * person in the picture added to get a good mood :)
+    ![person_with_desc](docs/person_with_desc.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* browse logged user matches
+    * see the profile of the matched person
+    ![matches](docs/matches.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* when there are no people to display
+![waiting_room](docs/waiting_room.png)
 
-### `npm run eject`
+* data base restart option is added to facilitate development
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+App fundamentals:
+* the app is based on functional components with Hooks
+* the state of the app is stored using Redux
+* logging in takes place using a JSON Web Token that is saved in local storage
+* Styles with styled-components
+* Http requests with Axios
+* Image gallery with react-image-gallery
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ ## Future plans
+ * add messaging 
+ * add external image/video storage
+    * add options for adding image/video
+ * add analytics panel(stats, charts, e.t.c)
+ * add more small features like:
+    * secure all private endpoints via JWT
+    * add basic information like mission, regulations e.t.c
+ * add admin panel
+ * make it fully responsive
+ * deploy app
