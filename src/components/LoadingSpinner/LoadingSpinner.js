@@ -1,21 +1,26 @@
 import React from 'react';
-import StyledLoadingSpinner from './styled/StyledLoadingSpinner';
+import StyledLoadingSpinner, { WrapperDiv } from './styled/StyledLoadingSpinner';
 
 const LoadingSpinner = () => (
-    <StyledLoadingSpinner>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </StyledLoadingSpinner>
+    <>
+        <WrapperDiv>
+        <StyledLoadingSpinner>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </StyledLoadingSpinner>
+        <p>Ładowanie..</p>
+        </WrapperDiv>
+    </>
 )
 
 export default LoadingSpinner;

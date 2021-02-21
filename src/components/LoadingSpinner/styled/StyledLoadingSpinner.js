@@ -93,4 +93,8 @@ const StyledLoadingSpinner = styled.div`
       }
 `;
 
+export const WrapperDiv = styled.div`
+    text-align: center;
+`;
+
 export default StyledLoadingSpinner;
