@@ -15,10 +15,11 @@ const StyledDescription = styled.div`
     
     button {
         cursor: pointer;
-        background: transparent;
+        //background: transparent;
         border: none;
         outline: none;
         border-radius: 6px;
+        background: ${({ isOpen }) => isOpen ? '#E68DE3' : 'transparent'};
                 
         :hover {
             background-color: #E68DE3;

@@ -34,7 +34,7 @@ function Person({ person }) {
                         showThumbnails={false}
                     />
                 </StyledGallery>
-                <StyledDescription>
+                <StyledDescription isOpen={isOpen}>
                     <p>{name}, {age}</p>
                     <button onClick={() => setIsOpen(!isOpen)}>
                         <MoreHorizIcon fontSize='large'/>
